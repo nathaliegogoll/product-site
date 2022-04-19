@@ -13,6 +13,7 @@
     "express": "^4.17.1",
     "heroku": "^7.60.1",
     "cors": "^2.8.5",
+    "@types/cors": "^2.8.12",
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
