@@ -46,6 +46,7 @@ var corsOptions = {
     credentials: true,
     optionSuccessStatus: 200,
 };
+var port = process.env.PORT || 8080;
 app.use(cors(corsOptions));
 app.use(parser.json());
 app.use(express.json());
@@ -54,9 +55,7 @@ app.get('/:page', function (req, res) { return __awaiter(void 0, void 0, void 0,
     var data, result, pageStart, pageEnd, page;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0:
-                console.log("get request with a body ".concat(JSON.stringify(req.params.page)));
-                return [4 /*yield*/, (0, node_fetch_1.default)("https://static.ui.com/fingerprint/ui/public.json")];
+            case 0: return [4 /*yield*/, (0, node_fetch_1.default)("https://static.ui.com/fingerprint/ui/public.json")];
             case 1:
                 data = _a.sent();
                 return [4 /*yield*/, data.json()];
@@ -76,9 +75,7 @@ app.get('/id/:id', function (req, res) { return __awaiter(void 0, void 0, void 0
     var data, result, device;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0:
-                console.log("get request with a body ".concat(JSON.stringify(req.params.id)));
-                return [4 /*yield*/, (0, node_fetch_1.default)("https://static.ui.com/fingerprint/ui/public.json")];
+            case 0: return [4 /*yield*/, (0, node_fetch_1.default)("https://static.ui.com/fingerprint/ui/public.json")];
             case 1:
                 data = _a.sent();
                 return [4 /*yield*/, data.json()];
@@ -94,9 +91,7 @@ app.get('/:page/:line', function (req, res) { return __awaiter(void 0, void 0, v
     var data, result, pageStart, pageEnd, page, searchQuery, filteredResult, searchResults;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0:
-                console.log("get request with a query ".concat(req.query.search, ", ").concat(req.params.line, " and params ").concat(req.params.page));
-                return [4 /*yield*/, (0, node_fetch_1.default)("https://static.ui.com/fingerprint/ui/public.json")];
+            case 0: return [4 /*yield*/, (0, node_fetch_1.default)("https://static.ui.com/fingerprint/ui/public.json")];
             case 1:
                 data = _a.sent();
                 return [4 /*yield*/, data.json()];
@@ -115,7 +110,7 @@ app.get('/:page/:line', function (req, res) { return __awaiter(void 0, void 0, v
         }
     });
 }); });
-app.listen(3001, function () {
-    console.log('The application is listening on port 3001!');
+app.listen(port, function () {
+    console.log('The application is running!');
 });
 //# sourceMappingURL=app.js.map
