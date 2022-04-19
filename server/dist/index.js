@@ -113,4 +113,4 @@ app.get('/:page/:line', function (req, res) { return __awaiter(void 0, void 0, v
 app.listen(port, function () {
     console.log('The application is running!');
 });
-//# sourceMappingURL=app.js.map
+//# sourceMappingURL=index.js.map
