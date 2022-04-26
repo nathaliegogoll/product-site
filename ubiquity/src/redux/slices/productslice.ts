@@ -7,7 +7,7 @@ export const fetchProducts = createAsyncThunk(
     'fetchProducts', 
     async (searchParams:Search, thunkAPI) => { 
         try {
-            const data = await fetch(`http://localhost:3001/${searchParams.page}/${searchParams.line}?search=${searchParams.value}`); 
+            const data = await fetch(`http://localhost:8080/${searchParams.page}/${searchParams.line}?search=${searchParams.value}`); 
             const products = await data.json();
             return products;
 
@@ -21,7 +21,7 @@ export const fetchProducts = createAsyncThunk(
     'fetchOneProduct', 
     async (id:string, thunkAPI) => { 
         try {
-            const data = await fetch(`http://localhost:3001/id/${id}`); 
+            const data = await fetch(`http://localhost:8080/id/${id}`); 
             const product = await data.json();
             return product;
 
